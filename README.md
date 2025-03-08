@@ -70,14 +70,14 @@ Existing smart home systems can be expensive and require a full home upgrade. **
   - **LED Indicator**: Displays device status.
   - **Modular Assembly**: Allows easy replacement and repair.
 
-## 📲 How to Use
+## How to Use
 1. **Install** the smart plug base into a standard wall socket.
 2. **Connect** your appliance to the plug base.
 3. **Download & configure** the Blynk IoT app.
 4. **Monitor & control** the appliance remotely through the app.
 5. **View real-time power consumption** to optimize energy usage.
 
-## 📦 Project Repository Structure
+## Project Repository Structure
 ```
 AmpAware-Smart-Plug-Base/
 │── docs/             # Reports & Documentation
