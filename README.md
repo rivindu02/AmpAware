@@ -6,23 +6,25 @@
 - **Ransika L.G.C.**
 - **Basith M.N.A.**
 - **Kumarage R.V.**
-- **Samuditha H.K.P.** (myself)
+- **Samuditha H.K.P.**
 
-## 📌 Project Overview
-AmpAware is an innovative **smart plug base** designed to provide users with the convenience of both manual and remote switching, real-time power monitoring, and enhanced safety features. The product is aimed at tech-savvy consumers and households looking to optimize energy consumption while maintaining control over their electrical devices from anywhere via the **Blynk IoT platform**.
+## Project Overview
+ **AmpAware Smart Plug Base** is designed to address everyday challenges related to energy management and control over electrical appliances. Based on
+ identified user needs, the device provides remote and manual control, real-time power monitoring,
+ and safety features, all integrated into a compact and user-friendly designThe product is aimed at tech-savvy consumers and households looking to optimize energy consumption while maintaining control over their electrical devices from anywhere via the **Blynk IoT platform**.
 
 Unlike a fully smart home system, **AmpAware** allows targeted control of specific appliances, making automation more cost-effective and accessible. It is compact, easy to install, and provides smart energy monitoring with surge protection to ensure safety.
 
-## 🎯 Problem Statement & Justification
+## Problem Statement & Justification
 Many households face energy management challenges, including:
-- **Forgotten Appliances**: Devices left on unnecessarily, leading to energy waste.
+- **Forgotten Appliances**: Devices left on unnecessarily, leading to energy waste. Also it can even cause the fires.
 - **Lack of Energy Data**: No real-time tracking of power usage.
 - **High Electricity Bills**: Inefficient energy consumption.
 
 Existing smart home systems can be expensive and require a full home upgrade. **AmpAware Smart Plug Base** offers an affordable and customizable solution, enabling users to automate and monitor individual appliances instead of committing to a full smart home conversion.
 
-## 🔧 Features & Specifications
-### 🌟 Key Features:
+## Features & Specifications
+### Key Features:
 - **Remote Control**: Turn devices on/off via the **Blynk IoT app**.
 - **Manual Control**: Physical button for direct switching.
 - **Power Monitoring**: Real-time voltage and current measurement.
@@ -30,7 +32,7 @@ Existing smart home systems can be expensive and require a full home upgrade. **
 - **User-Friendly Interface**: Simple setup and seamless mobile app integration.
 - **Compact Design**: Standard plug socket size for easy installation.
 
-### 📊 Technical Specifications:
+### Technical Specifications:
 - **Input Voltage**: 100-240V AC
 - **Maximum Load**: 13A
 - **Wi-Fi Standard**: 2.4GHz-2.5GHz 802.11b/g/n
@@ -41,8 +43,8 @@ Existing smart home systems can be expensive and require a full home upgrade. **
 - **Enclosure Material**: PLA Plastic (Prototype), planned to be heat-resistant polymer for commercial production
 - **Mobile App**: Integrated with **Blynk IoT** for remote access
 
-## 📜 System Architecture
-### 🔌 Hardware Components:
+##  System Architecture
+###  Hardware Components:
 - **Power Supply & Relay Control**: 
   - **AC Input (230V)**: Standard power supply.
   - **Relay Module (5V)**: Controls the connected device.
@@ -89,33 +91,13 @@ AmpAware-Smart-Plug-Base/
 │── .gitignore        # Git ignored files
 ```
 
-## 📈 Future Enhancements
+## Future Enhancements
 - **Integration with Smart Home Ecosystems**: Compatibility with Alexa, Google Assistant, and Apple HomeKit.
 - **Support for Zigbee/Z-Wave**: Alternative connectivity options for better range and reliability.
 - **AI-based Automation**: Smart scheduling and predictive device control.
 - **Multiple Plug Variants**: Support for different power standards globally.
 - **Integrated USB Charging Ports**: Additional functionality without extra adapters.
 
-## 📢 Marketing & Sales Strategy
-### **Target Market**:
-- Homeowners, renters, and tech enthusiasts interested in smart home automation.
-- Individuals looking for cost-effective energy management solutions.
-
-### **Sales Channels**:
-- Online platforms: E-commerce sites, company website.
-- Smart home retailers & partnerships with electrical appliance stores.
-- Collaboration with repair companies and electricians.
-
-### **Pricing Strategy**:
-- **Initial cost**: Rs. 7376 (prototype)
-- **Projected retail price**: Rs. 4500 (mass production)
-- **Launch Discounts & Bundles**: Early adopter promotions, package deals with other smart devices.
-
-### **Customer Support & After-Sales Service**:
-- **1-Year Warranty** covering defects.
-- **Multiple Support Channels**: Phone, email, live chat.
-- **Online Help Center**: FAQs, troubleshooting guides, instructional videos.
-- **Customer Feedback System** for continuous improvements.
 
 ---
 🌍 **GitHub Repo**: [AmpAware - Smart Plug Base](https://github.com/Praveen-samuditha/AmpAware---Smart-Plug-Base)
