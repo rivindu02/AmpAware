@@ -1,4 +1,4 @@
-//Viral Science www.youtube.com/c/viralscience  www.viralsciencecreativity.com
+
 //Blynk Home Automation with Physical Button and ON OFF State Feedback
 //Smart Socket
 
