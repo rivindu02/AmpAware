@@ -35,35 +35,6 @@ This project serves as a comprehensive learning experience in:
 - Hardware-software co-design and system integration
 - Project management and collaborative engineering work
 
-
-## 📂 Project Repository Structure
-
-```
-AmpAware/
-│
-├── 📁 docs/                          # 📋 Project Documentation
-│   ├── Design_report.pdf             # Detailed design documentation
-│   ├── final_onesilde_pitch_wiredwizards.pdf  # Project pitch presentation
-│   └── Wired_wizards_EDP_proposal.pdf # Initial project proposal
-│
-├── 📁 src/                           # 💻 Source Code
-│   └── controlling.ino               # ESP32 firmware (Blynk integration)
-│
-├── 📁 Schematics & PCB/              # ⚡ Hardware Design Files
-│   ├── ESP32-WROOM-32.IntLib         # Component library
-│   └── Esp32.SchDoc                  # Schematic design
-│
-├── 📁 MCU datasheet/                 # 📊 Technical References  
-│   ├── esp-wroom-32_datasheet.pdf    # ESP32 specifications
-│
-├── 🖼️ Product.jpg                    # Product demonstration image
-├── 🖼️ Team.jpg                       # Team photo
-├── 📄 README.md                      # Project overview (this file)
-├── 📄 LICENSE                        # Open-source license
-└── 📄 .gitignore                     # Git configuration
-```
-
-
 ---
 
 ## 🎯 Project Overview
@@ -111,7 +82,6 @@ Unlike expensive smart home systems that require complete infrastructure overhau
 💡 Status Indicators     │ LED feedback for device and connection status
 🌐 Wi-Fi Connectivity    │ 2.4GHz wireless communication (ESP8266/ESP32)
 🔄 State Synchronization │ Consistent state between app and hardware
-🛠️ OTA Updates          │ Remote firmware updates capability
 ```
 
 ### 📐 Technical Specifications:
@@ -150,13 +120,6 @@ Unlike expensive smart home systems that require complete infrastructure overhau
 - **Dimensions**: 85mm x 55mm x 45mm (L x W x H)
 - **Weight**: 120g (lightweight design)
 
-#### 📱 Software Features:
-- **OTA Updates**: Over-the-air firmware updates
-- **Real-time Monitoring**: Live power consumption data
-- **Remote Diagnostics**: System health monitoring
-- **Scheduling**: Automated on/off timers
-- **Energy Reports**: Historical usage analytics
-
 ---
 
 ## 🏗️ System Architecture
@@ -170,56 +133,17 @@ Unlike expensive smart home systems that require complete infrastructure overhau
          │                       │                       │
          ▼                       ▼                       ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  Relay Control  │    │   Sensors       │    │   Wi-Fi         │
-│  & Protection   │    │   (ACS712/      │    │   Communication │
-│                 │    │    ZMPT101B)    │    │   Module        │
+│  Relay Control  │    │   Status & I/O  │    │   Wi-Fi         │
+│  & Protection   │    │   Management    │    │   Communication │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
-### 🔧 Hardware Components:
-
-#### 🔌 Power Management System:
-- **AC Input (230V)**: Standard household power supply
-- **Relay Module (5V)**: High-capacity switching for connected devices
-- **Surge Protection Circuit**: Fuse-based safety system
-- **Power Supply Unit**: Converts AC to DC for MCU operation
-
-#### 🧠 Control & Processing Unit:
-- **ESP32 WROOM-32D**: 
-  - Dual-core processor for multitasking
-  - Built-in Wi-Fi and Bluetooth capabilities
-  - 4MB Flash memory for firmware storage
-  - GPIO pins for sensor and actuator control
-
-#### 📡 Communication Module:
-- **Wi-Fi (2.4GHz)**: Primary connectivity for IoT operations
-- **Blynk Protocol**: Secure cloud communication
-- **OTA Support**: Remote firmware update capability
-- **Local Network Integration**: LAN-based control backup
-
-#### 📊 Sensing & Monitoring:
-- **Relay State Monitoring**: Real-time relay position feedback
-- **Connection Status**: WiFi and Blynk connection monitoring  
-- **Physical Button Detection**: Interrupt-based button sensing
-- **LED Status Indication**: Visual feedback for system state
-- **OTA Status Tracking**: Firmware update progress monitoring
-
-*Note: Current implementation focuses on basic control. Power monitoring sensors (ACS712/ZMPT101B) can be integrated in future versions for energy consumption tracking.*
-
-#### 👤 User Interface Elements:
-- **Physical Push Button**: Manual on/off control with debouncing
-- **Status LED Indicator**: Visual feedback for device state
-- **Mobile App (Blynk IoT)**: 
-  - Real-time control and monitoring
-  - Energy consumption graphs
-  - Scheduling and automation features
-  - Remote access from anywhere
-
-#### 🏠 Mechanical Design:
-- **Compact Enclosure**: Standard 13A plug form factor
-- **Modular Assembly**: Easy maintenance and component replacement
-- **Heat Dissipation**: Ventilation design for thermal management
-- **Safety Compliance**: Electrical safety standards adherence
+### 🔧 System Components:
+- **Power Management**: AC input processing and relay control
+- **Control Unit**: ESP32/ESP8266 microcontroller with dual-core processing
+- **User Interface**: Physical button, status LED, and mobile app integration
+- **Communication**: WiFi connectivity and Blynk cloud services
+- **Safety Features**: Overcurrent protection and state management
 
 ---
 
