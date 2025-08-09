@@ -21,6 +21,8 @@ This Engineering Design Project demonstrates the development of an IoT-enabled s
 - **System Architecture** (Firmware Design, State Management)
 - **User Interface Design** (Mobile App Integration, Physical Controls)
 
+### 📋 **Project Presentation**: [Canva Design](https://www.canva.com/design/DAGOxdHLGcY/C9ncWn3HoFnEbKjtEisTJQ/view?utm_content=DAGOxdHLGcY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfe9ea47371)
+
 ### 🛠️ Development Tools & Technologies:
 - **Programming**: Arduino IDE, C++, ESP32/ESP8266 SDK
 - **IoT Platform**: Blynk Cloud Services, Mobile App Development
@@ -266,14 +268,6 @@ AmpAware/                               # 🏠 Project Root
 └── 📄 .gitignore                       # Git configuration
 ```
 
-### 📋 File Status & Descriptions:
-| File/Folder | Purpose | Technology | Status |
-|-------------|---------|------------|---------|
-| `src/controlling.ino` | ESP32 firmware with Blynk IoT | Arduino C++ | ✅ Complete |
-| `Schematics & PCB/` | Hardware design files | Altium Designer | ✅ Complete |
-| `docs/` | Project documentation & reports | PDF | ✅ Complete |
-| `MCU datasheet/` | Component specifications | PDF | ✅ Complete |
-| Product/Team Images | Visual project documentation | JPG | ✅ Added |
 
 ---
 
@@ -321,16 +315,11 @@ AmpAware/                               # 🏠 Project Root
 
 ---
 
-## 🔗 Resources & Links
-
-### 📚 Documentation:
-- **📋 Project Presentation**: [Canva Design](https://www.canva.com/design/DAGOxdHLGcY/C9ncWn3HoFnEbKjtEisTJQ/view?utm_content=DAGOxdHLGcY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfe9ea47371)
-
 ### 🛠️ Development Tools:
 - **Arduino IDE**: For firmware development and uploading
 - **Blynk App**: For mobile interface and IoT connectivity
 - **Altium Designer**: For PCB design and schematic capture
-- **Fusion 360**: For 3D modeling and enclosure design
+- **Solidworks**: For 3D modeling and enclosure design
 
 ---
 
