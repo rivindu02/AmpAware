@@ -8,10 +8,32 @@
 <img src="Team.jpg" alt="Team Image" width="400" height="300">
 
 #### Contributors:
-- **Ransika L.G.C.** - Coding & IoT Integration
-- **Basith M.N.A.** -  Enclosure Design
-- **Kumarage R.V.** -  PCB design & Testing
-- **Samuditha H.K.P.** - Firmware Development & System Architecture
+- **Ransika L.G.C.** - Firmware Development & IoT Integration
+- **Basith M.N.A.** - Enclosure Design & Mechanical Engineering  
+- **Kumarage R.V.** - PCB Design, Hardware Testing & System Integration
+- **Samuditha H.K.P.** - System Architecture & Project Coordination
+
+### 🎯 Project Scope
+This Engineering Design Project demonstrates the development of an IoT-enabled smart plug system, showcasing skills in:
+- **Embedded Systems Programming** (Arduino C++, ESP32/ESP8266)
+- **IoT Integration** (Blynk Platform, WiFi Communication)
+- **Hardware Design** (PCB Layout, Component Selection)
+- **System Architecture** (Firmware Design, State Management)
+- **User Interface Design** (Mobile App Integration, Physical Controls)
+
+### 🛠️ Development Tools & Technologies:
+- **Programming**: Arduino IDE, C++, ESP32/ESP8266 SDK
+- **IoT Platform**: Blynk Cloud Services, Mobile App Development
+- **Hardware Design**: Altium Designer (PCB & Schematic Design)
+- **Documentation**: PDF Reports, Technical Presentations
+- **Version Control**: Git, GitHub Repository Management
+
+### 📚 Learning Outcomes:
+This project serves as a comprehensive learning experience in:
+- Modern IoT development practices and cloud integration
+- Embedded systems programming with real-time constraints
+- Hardware-software co-design and system integration
+- Project management and collaborative engineering work
 
 
 ## 📂 Project Repository Structure
@@ -83,14 +105,14 @@ Unlike expensive smart home systems that require complete infrastructure overhau
 
 ### 🌟 Key Features:
 ```
-🔄 Remote Control        │ Turn devices on/off via Blynk IoT app
-🔲 Manual Control        │ Physical button for direct switching  
-📊 Power Monitoring      │ Real-time voltage and current measurement
-🛡️ Safety Protection     │ Surge & overcurrent protection systems
-📱 Mobile Integration    │ Seamless Blynk IoT app connectivity
+🔄 Remote Control        │ Control via Blynk IoT mobile app
+🔲 Manual Control        │ Physical button with state synchronization
+📱 Mobile Integration    │ Real-time control and status monitoring
 🔧 Easy Installation     │ Standard plug socket compatibility
-💡 Status Indicators     │ LED feedback for device status
-🌐 Wi-Fi Connectivity    │ 2.4GHz wireless communication
+💡 Status Indicators     │ LED feedback for device and connection status
+🌐 Wi-Fi Connectivity    │ 2.4GHz wireless communication (ESP8266/ESP32)
+🔄 State Synchronization │ Consistent state between app and hardware
+🛠️ OTA Updates          │ Remote firmware updates capability
 ```
 
 ### 📐 Technical Specifications:
@@ -109,10 +131,18 @@ Unlike expensive smart home systems that require complete infrastructure overhau
 
 #### 🖥️ Hardware Core:
 - **Microcontroller**: ESP32 WROOM-32D (Dual-core 240MHz)
-- **Memory**: 4MB Flash, 520KB SRAM
-- **Current Sensor**: ACS712 (30A) - ±1% accuracy
-- **Voltage Sensor**: ZMPT101B (230V) - High precision AC voltage detection
-- **Relay**: 5V DC Controlled, 13A AC switching capacity
+- **Memory**: 4MB Flash, 520KB SRAM  
+- **Development Board**: ESP8266 NodeMCU (as used in firmware)
+- **Relay Module**: 5V DC Controlled, 13A AC switching capacity
+- **Status Indication**: LED with current limiting resistor
+- **Input Control**: Physical push button with pull-up configuration
+
+#### 🔌 Power & Control System:
+- **Power Supply**: 5V DC input (via USB or external adapter)
+- **Relay Protection**: Flyback diode protection circuit
+- **Button Debouncing**: Software-based debouncing (500ms interval)
+- **State Management**: Non-volatile state retention
+- **OTA Support**: Over-the-air programming capability
 
 #### 🏠 Physical Design:
 - **Operating Temperature**: 0°C to 40°C
@@ -169,15 +199,13 @@ Unlike expensive smart home systems that require complete infrastructure overhau
 - **Local Network Integration**: LAN-based control backup
 
 #### 📊 Sensing & Monitoring:
-- **ACS712 Current Sensor (30A)**:
-  - Hall-effect based current measurement
-  - Real-time power consumption calculation
-  - Overcurrent detection and protection
-  
-- **ZMPT101B Voltage Sensor (230V)**:
-  - Precise AC voltage monitoring
-  - Supply voltage quality assessment
-  - Under/over-voltage protection
+- **Relay State Monitoring**: Real-time relay position feedback
+- **Connection Status**: WiFi and Blynk connection monitoring  
+- **Physical Button Detection**: Interrupt-based button sensing
+- **LED Status Indication**: Visual feedback for system state
+- **OTA Status Tracking**: Firmware update progress monitoring
+
+*Note: Current implementation focuses on basic control. Power monitoring sensors (ACS712/ZMPT101B) can be integrated in future versions for energy consumption tracking.*
 
 #### 👤 User Interface Elements:
 - **Physical Push Button**: Manual on/off control with debouncing
@@ -207,57 +235,125 @@ Unlike expensive smart home systems that require complete infrastructure overhau
 6. **✅ Test & Monitor** - Verify remote control and monitoring functions
 
 ### 📱 Blynk App Configuration:
+Based on the firmware implementation:
+
 ```
-Virtual Pins Configuration:
-├── V12: Relay Control Button
-├── V1:  Voltage Reading Display
-├── V2:  Current Reading Display  
-├── V3:  Power Consumption Display
-└── V4:  Device Status Indicator
+Virtual Pin Setup (Blynk Dashboard):
+┌─────────────────────────────────────┐
+│  V12: Relay Control Button         │
+│  ├── Widget: Button                │  
+│  ├── Mode: Switch                  │
+│  ├── Pin: V12                      │
+│  └── Values: 0 (OFF) / 1 (ON)      │
+└─────────────────────────────────────┘
+
+Additional Recommended Widgets:
+├── Device Status LED → Shows connection state
+├── Energy Monitor    → Power consumption display  
+├── Timer Widget      → Scheduled automation
+└── Notification      → Alerts & updates
 ```
 
-### 🛠️ Quick Setup Guide:
-1. **Power On**: LED indicator will show connection status
-2. **Wi-Fi Setup**: Device creates hotspot for initial configuration
-3. **Blynk Connection**: Enter authentication token from app
-4. **Device Pairing**: Scan QR code or enter device ID
-5. **Ready to Use**: Control remotely via smartphone
+### 🛠️ Hardware Setup Guide:
+```
+Physical Connections:
+├── D1 (GPIO5)  → Push Button (INPUT_PULLUP)
+├── D2 (GPIO4)  → Relay Module (OUTPUT)
+├── D5 (GPIO14) → Status LED + Resistor (OUTPUT)
+├── VIN         → 5V Power Supply
+├── GND         → Ground Reference
+└── EN          → Pull-up resistor (10kΩ)
+```
 
----
+### 🔧 Configuration Steps:
+1. **Blynk Setup**: Create new project, get Auth Token
+2. **WiFi Configuration**: Update `WIFI_SSID` and `WIFI_PASS` in code
+3. **Auth Token**: Replace `AUTH` placeholder with your Blynk token
+4. **Upload Firmware**: Use Arduino IDE with ESP32 board package
+5. **Hardware Assembly**: Connect components as per pin configuration
+6. **Testing**: Verify both app control and physical button operation
 
 ## 💻 Firmware Architecture
 
 ### 📁 Code Structure:
+Based on `src/controlling.ino`, the firmware implements:
+
 ```cpp
-Main Components:
-├── Blynk Integration     → Remote control via mobile app
-├── Physical Button       → Manual on/off control with debouncing  
-├── Relay Control         → Device switching mechanism
-├── LED Status Indicator  → Visual feedback system
-├── OTA Updates          → Over-the-air firmware updates
-├── Wi-Fi Management     → Network connectivity handling
-└── Safety Monitoring    → Overcurrent and surge protection
+Core Functionality:
+├── Blynk Integration (V12) → Remote control via mobile app
+├── Physical Button (D1)    → Manual on/off control with debouncing  
+├── Relay Control (D2)      → Device switching mechanism
+├── LED Status (D5)         → Visual feedback system
+├── OTA Updates             → Over-the-air firmware updates
+├── Wi-Fi Management        → Network connectivity handling
+└── State Synchronization   → Maintains consistent device state
 ```
 
-### 🔧 Key Functions:
-- **`BLYNK_WRITE(V12)`**: Handles remote control commands
-- **`checkPhysicalButton()`**: Monitors manual button presses
+### 🔧 Key Functions & Pin Configuration:
+- **`BLYNK_WRITE(V12)`**: Handles remote control commands from mobile app
+- **`checkPhysicalButton()`**: Monitors manual button presses with debouncing
 - **`BLYNK_CONNECTED()`**: Synchronizes device state on connection
 - **`ArduinoOTA.handle()`**: Enables remote firmware updates
 
-## Project Repository Structure
+#### Pin Assignments:
 ```
-AmpAware/
-│── docs/             # Reports & Documentation
-│── hardware/         # PCB designs, Schematics, Enclosure files
-│── firmware/         # ESP32 Firmware & Code
-│── mobile_app/       # App configurations (if applicable)
-│── tests/            # Testing results & scripts
-│── images/           # Photos & Diagrams
-│── README.md         # Project overview (this file)
-│── LICENSE           # Open-source license
-│── .gitignore        # Git ignored files
+D1 (GPIO5)  → Physical Push Button (INPUT_PULLUP)
+D2 (GPIO4)  → Relay Control (OUTPUT) 
+D5 (GPIO14) → Status LED (OUTPUT)
 ```
+
+#### Blynk Virtual Pins:
+```
+V12 → Main relay control button
+```
+
+### ⚙️ Firmware Features:
+- **State Persistence**: Device remembers last state after power cycle
+- **Dual Control**: Both app and physical button control with synchronization
+- **OTA Updates**: Remote firmware updates without physical access
+- **Connection Recovery**: Automatic reconnection to WiFi and Blynk server
+- **Visual Feedback**: LED indicates current relay state
+
+---
+
+## 📂 Project Repository Structure
+
+```
+AmpAware/                               # 🏠 Project Root
+│
+├── 📁 docs/                            # 📋 Project Documentation
+│   ├── Design_report.pdf               # Comprehensive design documentation
+│   ├── final_onesilde_pitch_wiredwizards.pdf  # Final project presentation
+│   └── Wired_wizards_EDP_proposal.pdf  # Initial project proposal
+│
+├── 📁 src/                             # 💻 Source Code
+│   └── controlling.ino                 # ESP32 firmware (Arduino IDE compatible)
+│
+├── 📁 Schematics & PCB/                # ⚡ Hardware Design Files
+│   ├── ESP32-WROOM-32.IntLib           # Altium component library
+│   └── Esp32.SchDoc                    # Circuit schematic design
+│
+├── 📁 MCU datasheet/                   # 📊 Technical References  
+│   ├── esp-wroom-32_datasheet.pdf      # ESP32 module specifications
+│   └── mcu/                            # Additional microcontroller docs
+│
+├── 🖼️ Product.jpg                      # Product demonstration image
+├── 🖼️ Team.jpg                         # Wired Wizards team photo
+├── 📄 README.md                        # Project overview (this file)
+├── 📄 LICENSE                          # Open-source license
+└── 📄 .gitignore                       # Git configuration
+```
+
+### 📋 File Status & Descriptions:
+| File/Folder | Purpose | Technology | Status |
+|-------------|---------|------------|---------|
+| `src/controlling.ino` | ESP32 firmware with Blynk IoT | Arduino C++ | ✅ Complete |
+| `Schematics & PCB/` | Hardware design files | Altium Designer | ✅ Complete |
+| `docs/` | Project documentation & reports | PDF | ✅ Complete |
+| `MCU datasheet/` | Component specifications | PDF | ✅ Complete |
+| Product/Team Images | Visual project documentation | JPG | ✅ Added |
+
+---
 
 ## 🔮 Future Enhancements & Roadmap
 
