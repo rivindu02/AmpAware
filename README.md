@@ -55,7 +55,6 @@ AmpAware/
 │
 ├── 📁 MCU datasheet/                 # 📊 Technical References  
 │   ├── esp-wroom-32_datasheet.pdf    # ESP32 specifications
-│   └── mcu/                          # Additional MCU documentation
 │
 ├── 🖼️ Product.jpg                    # Product demonstration image
 ├── 🖼️ Team.jpg                       # Team photo
