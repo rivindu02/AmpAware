@@ -128,7 +128,7 @@ Unlike expensive smart home systems that require complete infrastructure overhau
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │   AC Input      │    │   ESP32 MCU     │    │   Mobile App    │
-│   (230V)        │───▶│   Controller    │◄──▶│   (Blynk IoT)   │
+│   (230V)        │───▶│   Controller    │◄──▶│   (Blynk IoT)  │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
          │                       │                       │
          ▼                       ▼                       ▼
@@ -163,11 +163,11 @@ Based on the firmware implementation:
 ```
 Virtual Pin Setup (Blynk Dashboard):
 ┌─────────────────────────────────────┐
-│  V12: Relay Control Button         │
-│  ├── Widget: Button                │  
-│  ├── Mode: Switch                  │
-│  ├── Pin: V12                      │
-│  └── Values: 0 (OFF) / 1 (ON)      │
+│  V12: Relay Control Button          │
+│  ├── Widget: Button                 │  
+│  ├── Mode: Switch                   │
+│  ├── Pin: V12                       │
+│  └── Values: 0 (OFF) / 1 (ON)       │
 └─────────────────────────────────────┘
 
 Additional Recommended Widgets:
@@ -257,9 +257,8 @@ AmpAware/                               # 🏠 Project Root
 │   └── Esp32.SchDoc                    # Circuit schematic design
 │
 ├── 📁 MCU datasheet/                   # 📊 Technical References  
-│   ├── esp-wroom-32_datasheet.pdf      # ESP32 module specifications
-│   └── mcu/                            # Additional microcontroller docs
-│
+│   └── esp-wroom-32_datasheet.pdf      # ESP32 module specifications
+│  
 ├── 🖼️ Product.jpg                      # Product demonstration image
 ├── 🖼️ Team.jpg                         # Wired Wizards team photo
 ├── 📄 README.md                        # Project overview (this file)
